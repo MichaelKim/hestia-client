@@ -1,0 +1,26 @@
+{
+  "name": "hestia.io-client",
+  "version": "0.1.0",
+  "description": "Client-side framework for Hestia",
+  "main": "./lib/index.js",
+  "author": "Michael Kim <michaelkim314@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LenKagamine/hestia-client.git"
+  },
+  "bugs": "https://github.com/LenKagamine/hestia-client/issues",
+  "files": [
+    "lib/",
+    "dist/"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d lib && flow-copy-source -v src lib"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-copy-source": "^1.3.0"
+  }
+}
