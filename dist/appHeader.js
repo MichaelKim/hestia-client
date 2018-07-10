@@ -1,11 +1,13 @@
+'use strict';
+
 const app = {
   _ons: [],
   _names: [],
-  _joined: function(name) {
+  _joined: function (name) {
     this._names.push(name);
     this.joined(name);
   },
-  _left: function(name) {
+  _left: function (name) {
     var index = this._names.indexOf(name);
     if (index > -1) {
       this._names.splice(index, 1);
@@ -13,35 +15,32 @@ const app = {
     }
   },
 
-  on: function(eventName, callback) {
+  on: function (eventName, callback) {
     this._ons[eventName] = callback;
   },
-  emit: function(eventName, ...args) {
-    window.parent.postMessage(
-      {
-        type: 'emit',
-        eventName,
-        args
-      },
-      '*'
-    );
+  emit: function (eventName, ...args) {
+    window.parent.postMessage({
+      type: 'emit',
+      eventName,
+      args
+    }, '*');
   },
-  execute: function(eventName, args) {
+  execute: function (eventName, args) {
     this._ons[eventName].apply(this, args);
   },
-  names: function() {
+  names: function () {
     return this._names;
   },
-  joined: function() {},
-  left: function() {},
-  onload: function() {}
+  joined: function () {},
+  left: function () {},
+  onload: function () {}
 };
 app.emit('_onload');
-app.on('_connected', function(names, data) {
+app.on('_connected', function (names, data) {
   app._names = names;
   app.onload(data);
 });
-window.addEventListener('message', function(event) {
+window.addEventListener('message', function (event) {
   // TODO: Make event origin dynamic
   // if (event.origin.indexOf('http://localhost:5000') === -1) {
   //   return;
