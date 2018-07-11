@@ -43,4 +43,4 @@ Full documentation coming soon!
 
 ## License
 
-[MIT](https://github.com/LenKagamine/Hestia/blob/master/LICENSE)
+[MIT](https://github.com/LenKagamine/hestia-client/blob/master/LICENSE)
