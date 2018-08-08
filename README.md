@@ -1,5 +1,7 @@
 # hestia.io-client
 
+[![npm version](https://badge.fury.io/js/hestia.io-client.svg)](https://badge.fury.io/js/hestia.io-client)
+
 This is the client library of [Hestia.io](https://github.com/LenKagamine/Hestia).
 
 ## Usage
