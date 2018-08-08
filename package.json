@@ -9,7 +9,6 @@
   },
   "bugs": "https://github.com/LenKagamine/hestia-client/issues",
   "files": [
-    "lib/",
     "dist/"
   ],
   "license": "MIT",
