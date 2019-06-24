@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const hestia = function () {
   let loaded = false;
@@ -8,21 +8,17 @@ const hestia = function () {
     socket.on('player-joined', name => {
       joinedApp(name);
     });
-
     socket.on('player-left', name => {
       leftApp(name);
     });
-
     socket.on('app-joined', path => {
       appBox.style.display = 'block';
       setApp(path);
     });
-
     socket.on('app-left', () => {
       appBox.style.display = 'none';
       setApp('#');
     });
-
     socket.on('data-app-server', (eventName, args) => {
       executeApp(eventName, args);
     });
@@ -34,7 +30,6 @@ const hestia = function () {
       // if (event.origin.indexOf('http://localhost:5000') === -1) {
       //   return;
       // }
-
       if (event.data.type === 'emit') {
         const eventName = event.data.eventName;
         const args = event.data.args;
@@ -71,9 +66,9 @@ const hestia = function () {
 
   return function (socket, appDiv) {
     hestiaSetup(socket);
+
     if (!loaded) {
       loaded = true;
-
       appBox = document.createElement('iframe');
       appBox.style.width = '100vw';
       appBox.style.height = '100vh';
